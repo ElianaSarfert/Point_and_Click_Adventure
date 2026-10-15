@@ -6,7 +6,7 @@
 
 | Bereich | Eintrag |
 |---|---|
-| **Verfügbare Projektstunden** | *Herleitung: Workload (150) – Präsenz (42) = 108h* |
+| **Verfügbare Projektstunden** | *Herleitung: Workload (150) – Präsenz (42) - Abzüge (30) = 108h* |
 | **Größte Zeitrisiken im Semester** | *Storytelling und Stagegates* |
 
 ## Semesterplan mit Gates
