@@ -11,9 +11,9 @@
 **Hut:** Einarbeitung / Lernen  
 **Erledigt:** Einrichtung des Repositories  
 **Backlog-ID:** BackLog wurde bisher nicht thematisiert  
-**Hindernisse:**  keine
-**Entscheidungen:**  keine
-**Nächster Schritt:** Übung 2
+**Hindernisse:**  keine  
+**Entscheidungen:**  keine  
+**Nächster Schritt:** Übung 2  
 
 ---
 
@@ -35,8 +35,8 @@
 **Hut:** Technical Director  
 **Erledigt:** Semester Plan und Vorgehen  
 **Backlog-ID:** BackLog wurde bisher nicht thematisiert  
-**Hindernisse:** Unklar für welches Projekt
-**Entscheidungen:** Im Unterricht wurde sich auf allgemein halten geeinigt
+**Hindernisse:** Unklar für welches Projekt  
+**Entscheidungen:** Im Unterricht wurde sich auf allgemein halten geeinigt  
 **Nächster Schritt:** Übung 3 & Tutorials durcharbeiten
 
 ---
@@ -47,7 +47,7 @@
 **Hut:** Game Designer  
 **Erledigt:** Als Game Designer im falschen Projekt gearbeitet (Commit ignorieren)  
 **Backlog-ID:** BackLog wurde bisher nicht thematisiert  
-**Hindernisse:** Unklar für welches Projekt welches Repository genutzt werden soll 
+**Hindernisse:** Unklar für welches Projekt welches Repository genutzt werden soll  
 **Entscheidungen:**  
 **Nächster Schritt:** Korrigieren
 
@@ -59,8 +59,8 @@
 **Hut:** Einarbeitung / Lernen  
 **Erledigt:** Godot PCA Tutorial  
 **Backlog-ID:** BackLog wurde bisher nicht thematisiert  
-**Hindernisse:**  keine
-**Entscheidungen:**  keine
+**Hindernisse:**  keine  
+**Entscheidungen:**  keine  
 **Nächster Schritt:** Abschließen
 
 ---
@@ -71,8 +71,8 @@
 **Hut:** Producer  
 **Erledigt:** Repo aufgeräumt  
 **Backlog-ID:** BackLog wurde bisher nicht thematisiert  
-**Hindernisse:**  keine
-**Entscheidungen:**  keine
+**Hindernisse:**  keine  
+**Entscheidungen:**  keine  
 **Nächster Schritt:** Übung 3
 
 ---
@@ -83,6 +83,6 @@
 **Hut:** Producer  
 **Erledigt:** Dokumentstruktur aktualisiert  
 **Backlog-ID:** BackLog wurde bisher nicht thematisiert  
-**Hindernisse:**  keine
-**Entscheidungen:**  keine
+**Hindernisse:**  keine  
+**Entscheidungen:**  keine  
 **Nächster Schritt:** Übung 3
