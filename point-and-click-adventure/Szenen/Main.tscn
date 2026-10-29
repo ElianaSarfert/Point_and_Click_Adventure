@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://rlmikdybjlyv"]
+
+[ext_resource type="Script" uid="uid://b2rkuibjirp32" path="res://Skripte/protagonist.gd" id="1_t2iid"]
+[ext_resource type="Texture2D" uid="uid://chj2fyy3qmp1s" path="res://icon.svg" id="2_wo14p"]
+
+[node name="Control" type="Control" unique_id=373167561]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -24.0
+offset_top = -59.0
+offset_right = 1287.0
+offset_bottom = 376.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=761665110]
+script = ExtResource("1_t2iid")
+speed = null
+
+[node name="Player_Sprite" type="Sprite2D" parent="CharacterBody2D" unique_id=1216930121]
+position = Vector2(559, 287)
+texture = ExtResource("2_wo14p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=2033471400]
