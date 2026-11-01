@@ -30,10 +30,10 @@ Zeit vergeht außerhalb der Anlage anders. Die Folgen für Menschen und Konzern 
 ## Zielgruppe
 Erwachsene zwischen **16 und 45 Jahren** mit grundlegender Point-and-Click-Erfahrung; insbesondere PC- und Casual-Spielende mit Interesse an Science-Fiction wie *Interstellar*, *Alien* oder *2001: Odyssee im Weltraum*.
 
-## Hook / USP
+## Hook / Besonderheit
 **Klassische Reparatur- und Kombinationsrätsel auf einer havarierten Dyson-Sphäre um ein Schwarzes Loch – mit verspäteter Hilfe und den erzählerischen Konsequenzen unterschiedlicher Zeitverläufe.**
 
-## Core Loop
+## Ein Core Loop
 ```text
 Problem / Defekt entdecken
           ↓
@@ -46,20 +46,95 @@ Technisches Rätsel lösen / reparieren
 Nächster Abschnitt bzw. neues Problem
           └───────────────↺
 ```
-
+*Konzeptvorschlag für den linearen 10-Minuten-Ausschnitt; Kommunikation kann innerhalb der Rätselkette stattfinden.*
 
 ## MDA-Kurzanalyse
 - **Mechanics:** Mausbasierte Hotspots, Gegenstände und Inventar, Kombinationen, Dialoge sowie zustandsabhängige Reparaturrätsel.
 - **Dynamics:** Spielende untersuchen die Anlage, verstehen Defekte, kombinieren Ressourcen und schalten durch Reparaturen den nächsten Abschnitt frei; Nachrichten liefern Kontext und Hinweise.
 - **Aesthetics:** Isolation, Anspannung, Hoffnung, Erfindergeist und Selbstwirksamkeit.
 
-## Plattform, Engine, Steuerung
-**Plattform:** PC
-**Engine:** Godot
-**Steuerung:** Maus
-
 ## Referenzspiele
 *The Dig* (LucasArts, 1995) · *The Invincible* (Starward Industries, 2023) · *Observation* (No Code, 2019) · *Star Trek: Resurgence* (Dramatic Labs, 2023)
 
 ---
+**Offene Abstimmung mit Game Design:** Die bisher formulierte „Souveränität durch Zeitdilatation“ und ältere USPs (Zeitmanipulation/Dynastien; visuelle NPC-Alterung) sind nach Wegfall der aktiven Zeitmechanik noch nicht abschließend geklärt. Der Core Loop und der Vergleichssatz im Pitch sind Vorschläge für die aktualisierte, lineare Fassung.
 
+---
+
+# Anhang Technical Direction
+
+*Dieser Anhang zählt nicht zur einen Seite des One-Page Concepts.*
+
+## Technische Risiken (mindestens 3)
+
+Die Risiken sind vor der Umsetzung als überprüfbare Fragen formuliert. Die Spikes werden als kleinste Tests in separaten Godot-Testszenen durchgeführt. Die Erfolgskriterien sind vor Beginn festzulegen und jeweils mit **Ja/Nein** zu bewerten.
+
+### R1 – Point-and-Click-Navigation
+
+| Feld | Inhalt |
+|---|---|
+| **Risiko (als Frage)** | Bekomme ich eine zuverlässige mausbasierte Charakterbewegung mit anschließender Objektinteraktion in Godot hin? |
+| **Spike-Idee** | In einer leeren Testszene einen Charakter, ein Hindernis und einen interaktiven Hotspot platzieren; Bewegung zum Hotspot und anschließende Interaktion testen. |
+| **Erfolgskriterium (Ja/Nein)** | Erreicht der Charakter den angeklickten Hotspot, ohne mit dem Hindernis zu kollidieren, und wird die Interaktion anschließend ausgelöst? |
+| **Timebox** | 3 h |
+| **Plan B (optional)** | Feste Laufwege oder direkte Szenenwechsel statt freier Navigation. |
+
+### R2 – Inventar und Item-Kombinationen
+
+| Feld | Inhalt |
+|---|---|
+| **Risiko (als Frage)** | Kann ich ein Inventarsystem implementieren, in dem Gegenstände aufgenommen, kombiniert und auf Objekte angewendet werden können? |
+| **Spike-Idee** | In einer leeren Testszene zwei aufnehmbare Gegenstände und ein reparierbares Objekt anlegen. Aufnahme, Kombination und Anwendung testen. |
+| **Erfolgskriterium (Ja/Nein)** | Lassen sich beide Gegenstände aufnehmen, korrekt kombinieren und das entstandene Item genau einmal zur Reparatur verwenden, wobei die Ausgangsgegenstände aus dem Inventar entfernt werden? |
+| **Timebox** | 3 h |
+| **Plan B (optional)** | Kombinationen im Inventar streichen; Gegenstände direkt auf Szenenobjekte anwenden. |
+
+### R3 – Rätselabhängigkeiten und Spielzustände
+
+| Feld | Inhalt |
+|---|---|
+| **Risiko (als Frage)** | Kann ich aufeinander aufbauende Rätsel so verwalten, dass Fortschritt nach Szenenwechseln erhalten bleibt und weitere Interaktionen nur bei erfüllten Bedingungen verfügbar werden? |
+| **Spike-Idee** | Zwei kleine Testräume mit je einer Interaktion anlegen. Die zweite Interaktion wird erst nach erfolgreicher erster Reparatur verfügbar; anschließend zwischen den Räumen wechseln. |
+| **Erfolgskriterium (Ja/Nein)** | Bleibt die zweite Interaktion vor Abschluss der ersten gesperrt, wird danach freigeschaltet und bleibt der Reparaturzustand nach Hin- und Rückwechsel korrekt erhalten? |
+| **Timebox** | 3 h |
+| **Plan B (optional)** | Rätselabhängigkeiten reduzieren und eine streng lineare Abfolge zentral gesteuerter Ereignisse nutzen. |
+
+### R4 – Dialogsystem und Kommunikation
+
+| Feld | Inhalt |
+|---|---|
+| **Risiko (als Frage)** | Kann ich ein Dialogsystem umsetzen, das abhängig vom aktuellen Spielzustand unterschiedliche Nachrichten anzeigt? |
+| **Spike-Idee** | In einer leeren Testszene ein Kommunikationsgerät mit zwei Nachrichtentexten und einem umschaltbaren Reparaturzustand anlegen. |
+| **Erfolgskriterium (Ja/Nein)** | Zeigt das Kommunikationsgerät vor und nach Änderung des Reparaturzustands jeweils ausschließlich die dafür vorgesehene Nachricht? |
+| **Timebox** | 2 h |
+| **Plan B (optional)** | Feste, lineare Nachrichtensequenzen ohne zustandsabhängige Dialogverzweigungen verwenden. |
+
+
+---
+
+## Scope-Check (Aufgabe 3.4)
+
+**Ausgangsliste:** 20 Features · **1. Kürzung:** 10 Features gestrichen · **2. Kürzung:** 5 weitere gestrichen · **Verbleibender Kernumfang:** 5 Features.
+
+| ID | Feature | Ergebnis |
+|---|---|---|
+| F01 | Point-and-Click-Steuerung | **Behalten** |
+| F02 | Item-Rätsel | **Behalten** |
+| F03 | Logikrätsel | **Behalten** |
+| F04 | Betrachten von Gegenständen | verschoben |
+| F05 | Dialog | **Behalten** |
+| F06 | Spieleranimation | **Behalten** |
+| F07 | Extra Dialoganimation | gestrichen |
+| F08 | Tagebuch | gestrichen |
+| F09 | Hinweissystem | gestrichen |
+| F10 | Hotspots | verschoben |
+| F11 | Zeit-Gameplay-Mechaniken | gestrichen |
+| F12 | Karte | gestrichen |
+| F13 | Mehrere Enden | gestrichen |
+| F14 | Speichern | gestrichen |
+| F15 | Mehrere Sprachen | gestrichen |
+| F16 | Save Files | gestrichen |
+| F17 | Hintergrundnarration | gestrichen |
+| F18 | Controllerunterstützung | gestrichen |
+| F19 | Touchpad-Unterstützung | gestrichen |
+| F20 | Nahrungsleiste | gestrichen |
