@@ -109,16 +109,3 @@ Die Risiken sind vor der Umsetzung als überprüfbare Fragen formuliert. Die Spi
 | **Timebox** | 2 h |
 | **Plan B (optional)** | Feste, lineare Nachrichtensequenzen ohne zustandsabhängige Dialogverzweigungen verwenden. |
 
-### Vorläufige Priorisierung
-
-| Risiko | Priorität | Timebox |
-|---|---|---:|
-| R1 – Point-and-Click-Navigation | Mittel | 3 h |
-| R2 – Inventar und Item-Kombinationen | Hoch | 3 h |
-| R3 – Rätselabhängigkeiten und Spielzustände | Hoch | 3 h |
-| R4 – Dialogsystem und Kommunikation | Mittel | 2 h |
-| **Gesamt** | | **11 h** |
-
-**Größtes technisches Risiko (vorläufig):** R3, weil fehlerhafte Zustands- und Rätselabhängigkeiten in einem linearen Point-and-Click-Adventure den Fortschritt vollständig blockieren können.
-
-*Hinweis: Die Stunden sind Timeboxen für die Machbarkeitsprüfungen, keine Schätzungen für die vollständige Feature-Entwicklung. Die Risiken sind technische Arbeitshypothesen und werden während der Pre-Production überprüft.*
