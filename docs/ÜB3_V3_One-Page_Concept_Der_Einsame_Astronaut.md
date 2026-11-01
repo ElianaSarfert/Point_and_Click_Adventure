@@ -116,25 +116,25 @@ Die Risiken sind vor der Umsetzung als überprüfbare Fragen formuliert. Die Spi
 
 **Ausgangsliste:** 20 Features · **1. Kürzung:** 10 Features gestrichen · **2. Kürzung:** 5 weitere gestrichen · **Verbleibender Kernumfang:** 5 Features.
 
-| ID | Feature | Ergebnis |
-|---|---|---|
-| F01 | Point-and-Click-Steuerung | **Behalten** |
-| F02 | Item-Rätsel | **Behalten** |
-| F03 | Logikrätsel | **Behalten** |
-| F04 | Betrachten von Gegenständen | verschoben |
-| F05 | Dialog | **Behalten** |
-| F06 | Spieleranimation | **Behalten** |
-| F07 | Extra Dialoganimation | gestrichen |
-| F08 | Tagebuch | gestrichen |
-| F09 | Hinweissystem | gestrichen |
-| F10 | Hotspots | verschoben |
-| F11 | Zeit-Gameplay-Mechaniken | gestrichen |
-| F12 | Karte | gestrichen |
-| F13 | Mehrere Enden | gestrichen |
-| F14 | Speichern | gestrichen |
-| F15 | Mehrere Sprachen | gestrichen |
-| F16 | Save Files | gestrichen |
-| F17 | Hintergrundnarration | gestrichen |
-| F18 | Controllerunterstützung | gestrichen |
-| F19 | Touchpad-Unterstützung | gestrichen |
-| F20 | Nahrungsleiste | gestrichen |
+| ID | Feature | Ergebnis | Grund |
+|---|---|---|---|
+| F01 | Point-and-Click-Steuerung | **Behalten**  |  |
+| F02 | Item-Rätsel | **Behalten**  |  |
+| F03 | Logikrätsel | **Behalten**  |  |
+| F04 | Betrachten von Gegenständen | verschoben  | Zeit |
+| F05 | Dialog | **Behalten**  |  |
+| F06 | Spieleranimation | **Behalten**  |  |
+| F07 | Extra Dialoganimation | gestrichen  | Zeit |
+| F08 | Tagebuch | gestrichen  | Pillar |
+| F09 | Hinweissystem | gestrichen  | Zeit |
+| F10 | Hotspots | verschoben  | Zeit |
+| F11 | Zeit-Gameplay-Mechaniken | gestrichen  | Risiko |
+| F12 | Karte | gestrichen  | Pillar |
+| F13 | Mehrere Enden | gestrichen  | Risiko |
+| F14 | Speichern | gestrichen  | Risiko, Zeit |
+| F15 | Mehrere Sprachen | gestrichen  | Zeit |
+| F16 | Save Files | gestrichen  | Risiko, Zeit |
+| F17 | Hintergrundnarration | gestrichen  | Pillar |
+| F18 | Controllerunterstützung | gestrichen  | Risiko, Zeit |
+| F19 | Touchpad-Unterstützung | gestrichen  | Risiko, Zeit |
+| F20 | Nahrungsleiste | gestrichen  | Risiko |
