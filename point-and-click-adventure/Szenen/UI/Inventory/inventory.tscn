@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://by1eiau1sdegh"]
+
+[ext_resource type="Texture2D" uid="uid://buoe0brao0cmh" path="res://Assets/Dummy/Inventar/Inventory_Base.png" id="1_ighcr"]
+[ext_resource type="Theme" uid="uid://k4qyase0gdpj" path="res://new_theme.tres" id="2_fnmhh"]
+[ext_resource type="Texture2D" uid="uid://cjbmiiqlepmaj" path="res://Assets/Dummy/Inventar/Inventory_Slot.png" id="3_igqdn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhunq"]
+texture = ExtResource("3_igqdn")
+
+[node name="Inventory" type="Node" unique_id=1116303724]
+
+[node name="InventoryContainer" type="TextureRect" parent="." unique_id=1341633343]
+offset_right = 1024.0
+offset_bottom = 400.0
+texture = ExtResource("1_ighcr")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryContainer" unique_id=731130578]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 119.0
+offset_right = 896.0
+offset_bottom = 305.0
+theme = ExtResource("2_fnmhh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InventoryContainer/ScrollContainer" unique_id=1282396522]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 49
+
+[node name="Slot" type="Panel" parent="InventoryContainer/ScrollContainer/HBoxContainer" unique_id=284763426]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+size_flags_vertical = 0
+offset_transform_position = Vector2(-26, 0)
+offset_transform_scale = Vector2(0.2, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_bhunq")
+
+[node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/HBoxContainer/Slot" unique_id=1324760032]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 17.0
+offset_right = 131.0
+offset_bottom = 137.0
+expand_mode = 1
+
+[node name="Slot2" type="Panel" parent="InventoryContainer/ScrollContainer/HBoxContainer" unique_id=1573415365]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+size_flags_vertical = 0
+offset_transform_position = Vector2(-26, 0)
+offset_transform_scale = Vector2(0.2, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_bhunq")
+
+[node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/HBoxContainer/Slot2" unique_id=1791582018]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 17.0
+offset_right = 131.0
+offset_bottom = 137.0
+expand_mode = 1
+
+[node name="Slot3" type="Panel" parent="InventoryContainer/ScrollContainer/HBoxContainer" unique_id=961200579]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+size_flags_vertical = 0
+offset_transform_position = Vector2(-26, 0)
+offset_transform_scale = Vector2(0.2, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_bhunq")
+
+[node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/HBoxContainer/Slot3" unique_id=1386538222]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 17.0
+offset_right = 131.0
+offset_bottom = 137.0
+expand_mode = 1
+
+[node name="Slot4" type="Panel" parent="InventoryContainer/ScrollContainer/HBoxContainer" unique_id=1028729354]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+size_flags_vertical = 0
+offset_transform_position = Vector2(-26, 0)
+offset_transform_scale = Vector2(0.2, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_bhunq")
+
+[node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/HBoxContainer/Slot4" unique_id=1085600741]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 17.0
+offset_right = 131.0
+offset_bottom = 137.0
+expand_mode = 1
+
+[node name="Slot5" type="Panel" parent="InventoryContainer/ScrollContainer/HBoxContainer" unique_id=818016682]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+size_flags_vertical = 0
+offset_transform_position = Vector2(-26, 0)
+offset_transform_scale = Vector2(0.2, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_bhunq")
+
+[node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/HBoxContainer/Slot5" unique_id=2048367685]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 17.0
+offset_right = 131.0
+offset_bottom = 137.0
+expand_mode = 1
+
+[node name="Slot6" type="Panel" parent="InventoryContainer/ScrollContainer/HBoxContainer" unique_id=2050323469]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+size_flags_vertical = 0
+offset_transform_position = Vector2(-26, 0)
+offset_transform_scale = Vector2(0.2, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_bhunq")
+
+[node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/HBoxContainer/Slot6" unique_id=448013515]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 17.0
+offset_right = 131.0
+offset_bottom = 137.0
+expand_mode = 1
