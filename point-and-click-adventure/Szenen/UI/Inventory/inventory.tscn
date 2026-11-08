@@ -1,8 +1,42 @@
 [gd_scene format=3 uid="uid://by1eiau1sdegh"]
 
 [ext_resource type="Texture2D" uid="uid://buoe0brao0cmh" path="res://Assets/Dummy/Inventar/Inventory_Base.png" id="1_ighcr"]
-[ext_resource type="Theme" uid="uid://k4qyase0gdpj" path="res://new_theme.tres" id="2_fnmhh"]
+[ext_resource type="Script" uid="uid://b43se1vsb0c5u" path="res://Skripte/UI/inventory_container.gd" id="2_igqdn"]
 [ext_resource type="Texture2D" uid="uid://cjbmiiqlepmaj" path="res://Assets/Dummy/Inventar/Inventory_Slot.png" id="3_igqdn"]
+[ext_resource type="Texture2D" uid="uid://dhde18y3blu16" path="res://Assets/Dummy/Inventar/Inventory_Arrow.png" id="3_pdb45"]
+[ext_resource type="Texture2D" uid="uid://g85voeqbih11" path="res://Assets/Dummy/Inventar/OldStorageKey.png" id="5_cyidu"]
+[ext_resource type="Script" uid="uid://bwem4r8vfrv1s" path="res://Skripte/UI/slot.gd" id="5_wjnca"]
+[ext_resource type="Texture2D" uid="uid://cgi36b0vqij7m" path="res://Assets/Dummy/Inventar/BackPackClosed.png" id="6_cyidu"]
+[ext_resource type="Script" uid="uid://dbj28kuinl55b" path="res://Skripte/UI/backpack.gd" id="7_wjnca"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhunq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_igqdn"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_wjnca"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mqxou"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2mvv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aymna"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pp643"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wun45"]
+
+[sub_resource type="Theme" id="Theme_6isxg"]
+HScrollBar/icons/decrement = SubResource("ImageTexture_wjnca")
+HScrollBar/icons/decrement_highlight = SubResource("ImageTexture_wjnca")
+HScrollBar/icons/decrement_pressed = SubResource("ImageTexture_wjnca")
+HScrollBar/icons/increment = SubResource("ImageTexture_wjnca")
+HScrollBar/icons/increment_highlight = SubResource("ImageTexture_wjnca")
+HScrollBar/icons/increment_pressed = SubResource("ImageTexture_wjnca")
+HScrollBar/styles/grabber = SubResource("StyleBoxEmpty_mqxou")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_h2mvv")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_aymna")
+HScrollBar/styles/scroll = SubResource("StyleBoxEmpty_pp643")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_wun45")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhunq"]
 texture = ExtResource("3_igqdn")
@@ -13,6 +47,28 @@ texture = ExtResource("3_igqdn")
 offset_right = 1024.0
 offset_bottom = 400.0
 texture = ExtResource("1_ighcr")
+script = ExtResource("2_igqdn")
+
+[node name="LeftArrowButton" type="Button" parent="InventoryContainer" unique_id=2115752189]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 137.0
+offset_right = 84.0
+offset_bottom = 269.0
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bhunq")
+icon = ExtResource("3_pdb45")
+flat = true
+
+[node name="RightArrowButton" type="Button" parent="InventoryContainer" unique_id=2109364288]
+layout_mode = 0
+offset_left = 1004.0
+offset_top = 256.0
+offset_right = 1075.0
+offset_bottom = 388.0
+scale = Vector2(-1, -1)
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_igqdn")
+icon = ExtResource("3_pdb45")
+flat = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="InventoryContainer" unique_id=731130578]
 layout_mode = 0
@@ -20,7 +76,7 @@ offset_left = 89.0
 offset_top = 119.0
 offset_right = 896.0
 offset_bottom = 305.0
-theme = ExtResource("2_fnmhh")
+theme = SubResource("Theme_6isxg")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="InventoryContainer/ScrollContainer" unique_id=1282396522]
 layout_mode = 2
@@ -35,13 +91,20 @@ size_flags_vertical = 0
 offset_transform_position = Vector2(-26, 0)
 offset_transform_scale = Vector2(0.2, 0.5)
 theme_override_styles/panel = SubResource("StyleBoxTexture_bhunq")
+script = ExtResource("5_wjnca")
 
 [node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/HBoxContainer/Slot" unique_id=1324760032]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 17.0
-offset_right = 131.0
-offset_bottom = 137.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48700002
+anchor_top = 0.48100004
+anchor_right = 0.48700002
+anchor_bottom = 0.48100004
+offset_left = -59.920006
+offset_top = -59.960007
+offset_right = 60.079994
+offset_bottom = 60.039993
+texture = ExtResource("5_cyidu")
 expand_mode = 1
 
 [node name="Slot2" type="Panel" parent="InventoryContainer/ScrollContainer/HBoxContainer" unique_id=1573415365]
@@ -51,6 +114,7 @@ size_flags_vertical = 0
 offset_transform_position = Vector2(-26, 0)
 offset_transform_scale = Vector2(0.2, 0.5)
 theme_override_styles/panel = SubResource("StyleBoxTexture_bhunq")
+script = ExtResource("5_wjnca")
 
 [node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/HBoxContainer/Slot2" unique_id=1791582018]
 layout_mode = 0
@@ -67,6 +131,7 @@ size_flags_vertical = 0
 offset_transform_position = Vector2(-26, 0)
 offset_transform_scale = Vector2(0.2, 0.5)
 theme_override_styles/panel = SubResource("StyleBoxTexture_bhunq")
+script = ExtResource("5_wjnca")
 
 [node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/HBoxContainer/Slot3" unique_id=1386538222]
 layout_mode = 0
@@ -83,6 +148,7 @@ size_flags_vertical = 0
 offset_transform_position = Vector2(-26, 0)
 offset_transform_scale = Vector2(0.2, 0.5)
 theme_override_styles/panel = SubResource("StyleBoxTexture_bhunq")
+script = ExtResource("5_wjnca")
 
 [node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/HBoxContainer/Slot4" unique_id=1085600741]
 layout_mode = 0
@@ -99,6 +165,7 @@ size_flags_vertical = 0
 offset_transform_position = Vector2(-26, 0)
 offset_transform_scale = Vector2(0.2, 0.5)
 theme_override_styles/panel = SubResource("StyleBoxTexture_bhunq")
+script = ExtResource("5_wjnca")
 
 [node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/HBoxContainer/Slot5" unique_id=2048367685]
 layout_mode = 0
@@ -106,6 +173,7 @@ offset_left = 11.0
 offset_top = 17.0
 offset_right = 131.0
 offset_bottom = 137.0
+texture = ExtResource("5_cyidu")
 expand_mode = 1
 
 [node name="Slot6" type="Panel" parent="InventoryContainer/ScrollContainer/HBoxContainer" unique_id=2050323469]
@@ -115,6 +183,7 @@ size_flags_vertical = 0
 offset_transform_position = Vector2(-26, 0)
 offset_transform_scale = Vector2(0.2, 0.5)
 theme_override_styles/panel = SubResource("StyleBoxTexture_bhunq")
+script = ExtResource("5_wjnca")
 
 [node name="Item" type="TextureRect" parent="InventoryContainer/ScrollContainer/HBoxContainer/Slot6" unique_id=448013515]
 layout_mode = 0
@@ -123,3 +192,32 @@ offset_top = 17.0
 offset_right = 131.0
 offset_bottom = 137.0
 expand_mode = 1
+
+[node name="MovableItem" type="Node2D" parent="InventoryContainer" unique_id=1309057621]
+
+[node name="Item" type="TextureRect" parent="InventoryContainer/MovableItem" unique_id=114124438]
+custom_minimum_size = Vector2(120, 120)
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+expand_mode = 1
+
+[node name="BackPackButton" type="Button" parent="." unique_id=549548774]
+offset_left = -510.0
+offset_top = -51.0
+offset_right = 10.0
+offset_bottom = 469.0
+toggle_mode = true
+icon = ExtResource("6_cyidu")
+flat = true
+script = ExtResource("7_wjnca")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1760453261]
+position = Vector2(305, 215)
+zoom = Vector2(0.825, 0.825)
+
+[connection signal="pressed" from="InventoryContainer/LeftArrowButton" to="InventoryContainer" method="_on_left_arrow_button_pressed"]
+[connection signal="pressed" from="InventoryContainer/RightArrowButton" to="InventoryContainer" method="_on_right_arrow_button_pressed"]
+[connection signal="pressed" from="BackPackButton" to="InventoryContainer" method="_on_back_pack_button_pressed"]
+[connection signal="toggled" from="BackPackButton" to="BackPackButton" method="_on_toggled"]
