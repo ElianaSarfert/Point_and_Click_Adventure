@@ -15,10 +15,16 @@ run/main_scene="uid://rlmikdybjlyv"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ItemInteractionDescription="*uid://c8a0kofddu1nc"
+Globals="*uid://dmg7a0m5orppk"
+
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+mouse_cursor/custom_image="uid://bochetw428xb3"
 
 [input]
 
@@ -34,6 +40,7 @@ leftMouseClick={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

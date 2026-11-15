@@ -2,6 +2,8 @@ extends Node
 @onready var text: RichTextLabel = $RichTextLabel
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+signal closed_dialog
+
 var text_tween: Tween
 
 func _ready():
@@ -20,14 +22,14 @@ func toggle(show):
 		animated_sprite_2d.set_frame_and_progress(0,0)
 	else:
 		self.visible = false
+		clear()
 
 func clear():
 	if text_tween and text_tween.is_running():
 		text_tween.kill()
-	
 	self.visible = false
-	text.clear()
 	text.visible = false
+	$Button.visible = false
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	text.visible = true
@@ -41,3 +43,15 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		1.0,
 		1.0
 	).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+	
+	text_tween.finished.connect(_on_text_tween_finished)
+
+
+func _on_button_pressed() -> void:
+	emit_signal("closed_dialog")
+	toggle(false)
+
+
+
+func _on_text_tween_finished():
+	$Button.visible = true

@@ -41,7 +41,7 @@ HScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_wun45")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhunq"]
 texture = ExtResource("3_igqdn")
 
-[node name="Inventory" type="Node" unique_id=1116303724]
+[node name="Inventory" type="Node2D" unique_id=2141021044]
 
 [node name="InventoryContainer" type="TextureRect" parent="." unique_id=1341633343]
 offset_right = 1024.0
@@ -201,6 +201,7 @@ offset_left = -60.0
 offset_top = -60.0
 offset_right = 60.0
 offset_bottom = 60.0
+mouse_filter = 2
 expand_mode = 1
 
 [node name="BackPackButton" type="Button" parent="." unique_id=549548774]
@@ -215,6 +216,7 @@ script = ExtResource("7_wjnca")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1760453261]
 position = Vector2(305, 215)
+enabled = false
 zoom = Vector2(0.825, 0.825)
 
 [connection signal="pressed" from="InventoryContainer/LeftArrowButton" to="InventoryContainer" method="_on_left_arrow_button_pressed"]

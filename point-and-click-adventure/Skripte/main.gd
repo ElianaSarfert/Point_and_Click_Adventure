@@ -5,15 +5,22 @@ extends Node2D
 @onready var Player : AnimatedSprite2D = $Player
 @onready var interaction_objects: Area2D = $InteractionObjects
 @onready var card_info: Control = $UI/CardInfo
+@onready var inventory: Node2D = $UI/Inventory
+@onready var interaction_box_message: Control = $UI/InteractionBoxMessage
+@onready var cursor: Node2D = $UI/Cursor
 
 
 var navigation_map
 enum{IDLE, MOVE, CLIMB, INTERACT}
 
-func _input(event: InputEvent) -> void:
-	if Player.state == Player.State.INTERACT:
+
+
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if !(event is InputEventMouseButton):
 		return
-	if !Input.is_action_just_pressed("leftMouseClick"):
+	if Player.state == Player.State.INTERACT:
 		return
 	navigation_map = nav2D.get_navigation_map()
 	
@@ -56,15 +63,20 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 
 func _on_interaction_objects_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if !Input.is_action_just_pressed("leftMouseClick"):
+	var interaction_type = interaction_objects.get_child(shape_idx).interaction_type
+	cursor.handle_mouse_interaction_hover(interaction_type)
+	
+	if !(event is InputEventMouseButton):
 		return
+	cursor.handle_mouse_interaction_click(interaction_type)
+	
 	if Player.state == Player.State.INTERACT:
 		return
 	Player.is_going_to_interact = true
 	Player.interactable_object = interaction_objects.get_child(shape_idx)
-	Player.interaction_animation = interaction_objects.get_child(shape_idx).interaction_animation
+	Player.interaction_animation = interaction_objects.get_child(shape_idx).player_interaction_animation
+	Player.interaction_direction = interaction_objects.get_child(shape_idx).RIGHT
 	
-	var interaction_type = interaction_objects.get_child(shape_idx).interaction_type
 	
 	match interaction_type:
 		"info": 
@@ -73,7 +85,12 @@ func _on_interaction_objects_input_event(viewport: Node, event: InputEvent, shap
 				interaction_objects.get_child(shape_idx).text
 			)
 			card_info.global_position = interaction_objects.get_child(shape_idx).card_position_2d.get_global_transform_with_canvas().origin
-		
+		"pickUp":
+			interaction_objects.get_child(shape_idx).inventory = inventory
+		"item":
+			interaction_objects.get_child(shape_idx).inventory = inventory
+			interaction_objects.get_child(shape_idx).interaction_box_message = interaction_box_message
+			interaction_box_message.global_position = interaction_objects.get_child(shape_idx).info_box_position.get_global_transform_with_canvas().origin
 	
 	
 	var new_path: PackedVector2Array = NavigationServer2D.map_get_path(
@@ -83,3 +100,11 @@ func _on_interaction_objects_input_event(viewport: Node, event: InputEvent, shap
 		true
 		)
 	Player.set_path(new_path)
+
+
+func _on_card_info_closed_dialog() -> void:
+	Player.change_state(IDLE)
+
+
+func _on_interaction_objects_mouse_exited() -> void:
+	cursor.handle_mouse_interaction_exit()

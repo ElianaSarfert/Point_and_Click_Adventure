@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://dgpul3iniqbxj"]
+
+[ext_resource type="Script" uid="uid://ioreiv3sgreq" path="res://Skripte/UI/cursor.gd" id="1_wha4j"]
+[ext_resource type="Texture2D" uid="uid://bochetw428xb3" path="res://Assets/Dummy/Mouse/cursor_default.png" id="2_wha4j"]
+
+[sub_resource type="Animation" id="Animation_gt6i8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.3, 1.3)]
+}
+
+[sub_resource type="Animation" id="Animation_o6yur"]
+resource_name = "info_hover"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [0.0, -0.2617994, 0.2617994]
+}
+
+[sub_resource type="Animation" id="Animation_ly8oc"]
+resource_name = "pick_hover"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [Vector2(1.3, 1.3), Vector2(1.2, 1.2), Vector2(1.3, 1.3)]
+}
+
+[sub_resource type="Animation" id="Animation_0skxl"]
+resource_name = "use_hover"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [Vector2(0, -5), Vector2(0, 5), Vector2(0, -5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x8nja"]
+_data = {
+&"RESET": SubResource("Animation_gt6i8"),
+&"info_hover": SubResource("Animation_o6yur"),
+&"pick_hover": SubResource("Animation_ly8oc"),
+&"use_hover": SubResource("Animation_0skxl")
+}
+
+[node name="Cursor" type="Node2D" unique_id=440216542]
+script = ExtResource("1_wha4j")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=628352103]
+position = Vector2(0, -5)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_wha4j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1273102382]
+libraries/ = SubResource("AnimationLibrary_x8nja")
