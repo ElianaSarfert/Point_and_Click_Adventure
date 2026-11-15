@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://dn1qcogqsans3" path="res://Assets/Dummy/InfoCard/InfoCard0029.png" id="29_1qv27"]
 [ext_resource type="Texture2D" uid="uid://bwbos1odh1e8m" path="res://Assets/Dummy/InfoCard/InfoCard0030.png" id="30_jxlg1"]
 [ext_resource type="Texture2D" uid="uid://bsulw5fhaw1vl" path="res://Assets/Dummy/InfoCard/InfoCard0031.png" id="31_wawlo"]
+[ext_resource type="Texture2D" uid="uid://op8oaoprngj2" path="res://Assets/Dummy/Inventar/WolfCrest.png" id="33_g66du"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bhunq"]
 animations = [{
@@ -145,6 +146,8 @@ offset_left = -576.0
 offset_top = -324.0
 offset_right = -536.0
 offset_bottom = -284.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_6nr7f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1299141831]
@@ -178,4 +181,16 @@ fgj
 kasjgklög
 agkljälg"
 
+[node name="Button" type="Button" parent="." unique_id=559168968]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 165.0
+offset_top = 249.0
+offset_right = 281.0
+offset_bottom = 351.0
+icon = ExtResource("33_g66du")
+flat = true
+expand_icon = true
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

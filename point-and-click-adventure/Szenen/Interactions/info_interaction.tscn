@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b1qg4tpuvd4mr"]
+
+[ext_resource type="Script" uid="uid://c7vb7vga01bi" path="res://Skripte/Interaktionen/InfoInteraktion.gd" id="1_gflgv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
+radius = 72.06247
+
+[node name="Info" type="CollisionShape2D" unique_id=1719172390]
+shape = SubResource("CircleShape2D_bhunq")
+script = ExtResource("1_gflgv")
+
+[node name="Position2D" type="Node2D" parent="." unique_id=1442468810]
+
+[node name="CardPosition2D" type="Node2D" parent="." unique_id=1880188894]
+position = Vector2(-99, -185)

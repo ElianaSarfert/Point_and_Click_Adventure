@@ -11,7 +11,7 @@ var is_going_to_interact : bool
 var interactable_object
 var interaction_timer = 1
 var interaction_animation : String
-
+var interaction_direction : bool
 var path : PackedVector2Array = PackedVector2Array()
 
 var speed = 250.0
@@ -89,6 +89,8 @@ func climb_along_path(distance):
 	move_along_path(distance)
 
 func interact(delta):
+	if(interaction_animation == "interact_look_down" || interaction_animation == "interact_look_up"):
+		return
 	interaction_timer -= delta
 	if(interaction_timer <= 0):
 		interaction_timer = 0.0
@@ -122,4 +124,10 @@ func change_state(newState):
 			interaction_timer = 1.0
 			interactable_object.interact()
 			self.play(interaction_animation)
-			print("interact yay")
+			face_direction(interaction_direction)
+
+func face_direction(RIGHT):
+	if RIGHT:
+		self.set_flip_h(false)
+	else:
+		self.set_flip_h(true)

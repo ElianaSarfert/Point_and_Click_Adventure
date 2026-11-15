@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cuxkjxwbdxlys"]
+
+[ext_resource type="Script" uid="uid://b40rkht4oevuq" path="res://room_switch_interaction.gd" id="1_nvcb1"]
+[ext_resource type="Texture2D" uid="uid://dvmnbwyibkjiu" path="res://Assets/Dummy/bomb_shrine.png" id="2_u7460"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(79, 86)
+
+[node name="Room_Switch" type="CollisionShape2D" unique_id=2090592813]
+position = Vector2(39, 43)
+shape = SubResource("RectangleShape2D_bhunq")
+script = ExtResource("1_nvcb1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1817474154]
+position = Vector2(0.50000334, -42.999996)
+scale = Vector2(5.6875, 5.5624995)
+texture = ExtResource("2_u7460")
+
+[node name="Position2D" type="Node2D" parent="." unique_id=1650602809]
+position = Vector2(0, 43)

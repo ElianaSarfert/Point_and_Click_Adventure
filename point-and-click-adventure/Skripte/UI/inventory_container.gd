@@ -56,7 +56,7 @@ func slot_gui_input(event: InputEvent, slot: Slot):
 func _input(event):
 	if movable_item.visible:
 		var item_size = movable_item.get_node("Item").size
-		movable_item.global_position = get_viewport().get_mouse_position() - item_size / 1
+		movable_item.global_position = get_viewport().get_mouse_position()
 
 func activateSlots(slot):
 	for h_slot in scroll_container.get_node("HBoxContainer").get_children():
@@ -64,6 +64,22 @@ func activateSlots(slot):
 			h_slot.toggleActivation(true)
 		else:
 			h_slot.toggleActivation(false)
+
+func add_item(texture):
+	for h_slot in scroll_container.get_node("HBoxContainer").get_children():
+		if h_slot.item.get_texture() == null:
+			h_slot.putIntoSlot(texture, true)
+			activateSlots(h_slot)
+			active_slot = h_slot
+			self.visible = true
+			return
+
+func remove_item():
+	for h_slot in scroll_container.get_node("HBoxContainer").get_children():
+		if h_slot == active_slot:
+			h_slot.pickFromSlot()
+			active_slot = null
+			activateSlots(null)
 
 func _on_left_arrow_button_pressed() -> void:
 	scroll_container.scroll_horizontal -= scroll_amount
