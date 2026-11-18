@@ -138,3 +138,10 @@ Die Risiken sind vor der Umsetzung als überprüfbare Fragen formuliert. Die Spi
 | F18 | Controllerunterstützung | gestrichen  | Risiko, Zeit |
 | F19 | Touchpad-Unterstützung | gestrichen  | Risiko, Zeit |
 | F20 | Nahrungsleiste | gestrichen  | Risiko |
+**Update durch Übung 4:**
+| F21 | Alternative Lösungswege für Rätsel | verschoben | Zeit |
+| F22 | Verzweigte Dialoge mit unterschiedlichen Konsequenzen | gestrichen | Zeit, Risiko |
+| F23 | Dynamisches Ressourcenmanagement | gestrichen | Risiko, Pillar |
+| F24 | Zusätzliche optionale Rätsel | gestrichen | Zeit |
+| F25 | Zusätzliche erkundbare Räume | verschoben | Zeit |
+

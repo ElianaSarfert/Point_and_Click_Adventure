@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://41dh6v0vctue"]
+
+[ext_resource type="Script" uid="uid://cse1032erhmne" path="res://Skripte/item.gd" id="1_2ttkq"]
+[ext_resource type="Texture2D" uid="uid://g85voeqbih11" path="res://Assets/Dummy/Inventar/OldStorageKey.png" id="1_lflok"]
+
+[resource]
+script = ExtResource("1_2ttkq")
+item_id = &"key"
+item_name = "Key"
+item_texture = ExtResource("1_lflok")
+metadata/_custom_type_script = "uid://cse1032erhmne"

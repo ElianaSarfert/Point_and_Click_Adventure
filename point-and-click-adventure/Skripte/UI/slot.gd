@@ -1,6 +1,6 @@
 class_name Slot extends Panel
 
-@onready var item: TextureRect = $Item
+@onready var placed_item: TextureRect = $Item
 
 var default_slot_texture = preload("res://Assets/Dummy/Inventar/Inventory_Slot.png")
 var active_slot_texture = preload("res://Assets/Dummy/Inventar/Inventory_Slot_Active.png")
@@ -16,14 +16,14 @@ func _ready() -> void:
 	active_style.texture  = active_slot_texture
 
 func pickFromSlot():
-	item.set_texture(null)
+	placed_item.set_texture(null)
 
 func putIntoSlot(new_texture, wait : bool):
-	item.set_texture(new_texture)
+	placed_item.set_texture(new_texture)
 	if wait:
-		item.visible = false
+		placed_item.visible = false
 		await(get_tree().create_timer(0.05))
-		item.visible = true
+		placed_item.visible = true
 
 
 func toggleActivation(activate: bool):
