@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://b43se1vsb0c5u" path="res://Skripte/UI/inventory_container.gd" id="2_igqdn"]
 [ext_resource type="Texture2D" uid="uid://cjbmiiqlepmaj" path="res://Assets/Dummy/Inventar/Inventory_Slot.png" id="3_igqdn"]
 [ext_resource type="Texture2D" uid="uid://dhde18y3blu16" path="res://Assets/Dummy/Inventar/Inventory_Arrow.png" id="3_pdb45"]
-[ext_resource type="Texture2D" uid="uid://g85voeqbih11" path="res://Assets/Dummy/Inventar/OldStorageKey.png" id="5_cyidu"]
 [ext_resource type="Script" uid="uid://bwem4r8vfrv1s" path="res://Skripte/UI/slot.gd" id="5_wjnca"]
 [ext_resource type="Texture2D" uid="uid://cgi36b0vqij7m" path="res://Assets/Dummy/Inventar/BackPackClosed.png" id="6_cyidu"]
 [ext_resource type="Script" uid="uid://dbj28kuinl55b" path="res://Skripte/UI/backpack.gd" id="7_wjnca"]
@@ -104,7 +103,6 @@ offset_left = -59.920006
 offset_top = -59.960007
 offset_right = 60.079994
 offset_bottom = 60.039993
-texture = ExtResource("5_cyidu")
 expand_mode = 1
 
 [node name="Slot2" type="Panel" parent="InventoryContainer/ScrollContainer/HBoxContainer" unique_id=1573415365]
@@ -173,7 +171,6 @@ offset_left = 11.0
 offset_top = 17.0
 offset_right = 131.0
 offset_bottom = 137.0
-texture = ExtResource("5_cyidu")
 expand_mode = 1
 
 [node name="Slot6" type="Panel" parent="InventoryContainer/ScrollContainer/HBoxContainer" unique_id=2050323469]

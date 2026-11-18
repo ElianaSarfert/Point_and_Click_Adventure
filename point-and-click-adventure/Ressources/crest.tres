@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://jp1lr48wqa6k"]
+
+[ext_resource type="Script" uid="uid://cse1032erhmne" path="res://Skripte/item.gd" id="1_52n6d"]
+[ext_resource type="Texture2D" uid="uid://op8oaoprngj2" path="res://Assets/Dummy/Inventar/WolfCrest.png" id="1_brnf0"]
+
+[resource]
+script = ExtResource("1_52n6d")
+item_id = &"crest"
+item_name = "Crest"
+item_texture = ExtResource("1_brnf0")
+metadata/_custom_type_script = "uid://cse1032erhmne"

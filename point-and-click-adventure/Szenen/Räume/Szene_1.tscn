@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://xejpnvknxvcd" path="res://Assets/Dummy/godot_puppet.png" id="10_8rogh"]
 [ext_resource type="PackedScene" uid="uid://by1eiau1sdegh" path="res://Szenen/UI/Inventory/inventory.tscn" id="11_vhyf6"]
 [ext_resource type="Texture2D" uid="uid://op8oaoprngj2" path="res://Assets/Dummy/Inventar/WolfCrest.png" id="12_pyjwj"]
+[ext_resource type="Resource" uid="uid://41dh6v0vctue" path="res://Ressources/key.tres" id="12_v0v8l"]
+[ext_resource type="Resource" uid="uid://jp1lr48wqa6k" path="res://Ressources/crest.tres" id="13_v7o0c"]
 [ext_resource type="PackedScene" uid="uid://cuxkjxwbdxlys" path="res://Szenen/Interactions/room_switch_interaction.tscn" id="14_418h0"]
 [ext_resource type="PackedScene" uid="uid://ci7rbc60m0mu3" path="res://Szenen/UI/interaction_box_message.tscn" id="16_urg18"]
 [ext_resource type="PackedScene" uid="uid://dgpul3iniqbxj" path="res://Szenen/UI/Mouse/Cursor.tscn" id="17_x1vep"]
@@ -441,7 +443,7 @@ position = Vector2(194, 112)
 shape = SubResource("RectangleShape2D_6f8o3")
 script = ExtResource("9_elhvx")
 interaction_entry = "GODOT_PUPPET"
-correct_item = "icon"
+correct_item = &"key"
 RIGHT = true
 
 [node name="Sprite2D" type="Sprite2D" parent="InteractionObjects/Random InteractionItem" unique_id=958436493]
@@ -462,6 +464,7 @@ position = Vector2(-148, -271)
 position = Vector2(-163, 257)
 shape = SubResource("RectangleShape2D_6f8o3")
 script = ExtResource("9_vnike")
+item = ExtResource("12_v0v8l")
 
 [node name="Sprite2D" type="Sprite2D" parent="InteractionObjects/Random InteractionPickUp" unique_id=1696564162]
 position = Vector2(0.49999946, 0.5000002)
@@ -478,6 +481,7 @@ position = Vector2(-28, 46)
 position = Vector2(-353, 255)
 shape = SubResource("RectangleShape2D_6f8o3")
 script = ExtResource("9_vnike")
+item = ExtResource("13_v7o0c")
 
 [node name="Sprite2D" type="Sprite2D" parent="InteractionObjects/Wappen" unique_id=1859158175]
 position = Vector2(0.49999946, 0.5000002)
