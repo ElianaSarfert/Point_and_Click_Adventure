@@ -212,6 +212,7 @@ flat = true
 script = ExtResource("7_wjnca")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1760453261]
+visible = false
 position = Vector2(305, 215)
 enabled = false
 zoom = Vector2(0.825, 0.825)
