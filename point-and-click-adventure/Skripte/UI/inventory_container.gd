@@ -44,6 +44,23 @@ func slot_gui_input(event: InputEvent, slot: Slot):
 			place_item = false
 			active_slot = next_slot
 			activateSlots(active_slot)
+		elif temp_item.combi == Globals.inventory_content.get(get_slot_id(next_slot)).item_id:
+			var partner_item : Item = Globals.inventory_content.get(get_slot_id(next_slot))
+			var new_item : Item = temp_item.result
+			if !temp_item.persist:
+				current_slot.pickFromSlot()
+			if !partner_item.persist:
+				next_slot.pickFromSlot()
+				next_slot.putIntoSlot(new_item, false)
+			else:
+				for h_slot in scroll_container.get_node("HBoxContainer").get_children():
+					if Globals.inventory_content.get(get_slot_id(h_slot)) == null:
+						h_slot.putIntoSlot(new_item, false)
+						break
+			temp_item = null
+			place_item = false
+			active_slot = next_slot
+			activateSlots(active_slot)
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
 			temp_item = Globals.inventory_content.get(get_slot_id(slot))

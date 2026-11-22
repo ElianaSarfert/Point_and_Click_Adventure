@@ -2,10 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cse1032erhmne" path="res://Skripte/item.gd" id="1_2ttkq"]
 [ext_resource type="Texture2D" uid="uid://g85voeqbih11" path="res://Assets/Dummy/Inventar/OldStorageKey.png" id="1_lflok"]
+[ext_resource type="Resource" uid="uid://dhnl7lb8pn6js" path="res://Ressources/head.tres" id="2_euqd1"]
 
 [resource]
 script = ExtResource("1_2ttkq")
 item_id = &"key"
 item_name = "Key"
 item_texture = ExtResource("1_lflok")
+combi = &"crest"
+result = ExtResource("2_euqd1")
 metadata/_custom_type_script = "uid://cse1032erhmne"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dhnl7lb8pn6js"]
+
+[ext_resource type="Script" uid="uid://cse1032erhmne" path="res://Skripte/item.gd" id="1_iwk84"]
+[ext_resource type="Texture2D" uid="uid://chj2fyy3qmp1s" path="res://icon.svg" id="1_k7yh3"]
+
+[resource]
+script = ExtResource("1_iwk84")
+item_id = &"head"
+item_name = "Head"
+item_texture = ExtResource("1_k7yh3")
+metadata/_custom_type_script = "uid://cse1032erhmne"
